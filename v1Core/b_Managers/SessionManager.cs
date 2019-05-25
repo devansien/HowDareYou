@@ -10,6 +10,7 @@ namespace HowDareYou
         public static void Set(string key, object val)
         {
             APLSkillRequest request = Input.GetRequest();
+
             if (request.Session == null)
                 request.Session = new Session();
             if (request.Session.Attributes == null)

@@ -22,8 +22,10 @@ namespace HowDareYou
             State state = new State()
             {
                 UserId = userId,
+                UserName = string.Empty,
                 NumPlayed = 0,
                 NumPrompted = 0,
+                Challanges = new List<Challange>(),
                 Utterances = new List<Utterance>()
             };
 

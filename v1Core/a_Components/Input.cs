@@ -28,6 +28,7 @@ namespace HowDareYou
         public string GetRequestName()
         {
             string requestName;
+
             if (intentRequest != null)
                 requestName = intentRequest.Intent.Name;
             else

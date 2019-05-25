@@ -11,6 +11,7 @@ namespace HowDareYou
         public string UserName { get; set; }
         public int NumPlayed { get; set; }
         public int NumPrompted { get; set; }
+        public List<Challange> Challanges { get; set; }
         public List<Utterance> Utterances { get; set; }
     }
 }
