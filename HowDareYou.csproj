@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AWSProjectType>Lambda</AWSProjectType>
+    <Company>Ansien</Company>
+    <Authors>devansien</Authors>
+    <Version>0.1.0</Version>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <Product>How Dare You</Product>
+    <Description>Alexa multiplayer custom quiz game skill</Description>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Alexa.NET.APL" Version="3.15.0" />
+    <PackageReference Include="Amazon.Lambda.Core" Version="1.1.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.5.0" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.101.14" />
+  </ItemGroup>
+  
+</Project>
