@@ -19,8 +19,8 @@ namespace HowDareYou
                     }
                     else
                         Response.SetSpeech(false, false,
-                            SpeechManager.GetNotUnderstandSpeech() + SpeechManager.GetTryAgainSpeech() + SpeechManager.GetWhatWouldYouSpeech(),
-                            SpeechManager.GetShortHelpSpeech() + SpeechManager.GetWhatWouldYouSpeech());
+                            SpeechManager.GetNotUnderstandSpeech() + SpeechManager.GetTryAgainSpeech() + SpeechManager.GetWhatWouldYouDoSpeech(),
+                            SpeechManager.GetShortHelpSpeech() + SpeechManager.GetWhatWouldYouDoSpeech());
                 });
             });
         }

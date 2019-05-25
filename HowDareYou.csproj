@@ -19,4 +19,9 @@
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.101.14" />
   </ItemGroup>
   
+  <ItemGroup>
+    <Folder Include="v1Core\g_Pages\" />
+    <Folder Include="v1Core\i_Speeches\Ssml\" />
+  </ItemGroup>
+  
 </Project>

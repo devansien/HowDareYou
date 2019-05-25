@@ -28,6 +28,11 @@ namespace HowDareYou
                 },
                 new RequestType
                 {
+                    Name = CustomRequest.NewUserNameIntent,
+                    Type = typeof(NewUserNameIntentHandler)
+                },
+                new RequestType
+                {
                     Name = BuiltInRequest.SessionEndedRequest,
                     Type = typeof(SessionEndedRequestHandler)
                 }

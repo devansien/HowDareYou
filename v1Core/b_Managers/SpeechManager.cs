@@ -21,6 +21,17 @@ namespace HowDareYou
             return speech;
         }
 
+        public static string GetUpdateUserNameSpeech(string username)
+        {
+            List<string> speeches = enSpeech.GetUpdateUserNameSpeeches();
+            string speech = speeches[random.Next(speeches.Count)];
+
+            int targetIndex = speech.IndexOf(replaceTarget);
+            speech = speech.Remove(targetIndex, replaceTarget.Length).Insert(targetIndex, username);
+
+            return speech;
+        }
+
         public static string GetAskForUserNameSpeech()
         {
             List<string> speeches = enSpeech.GetAskForUserNameSpeeches();
@@ -37,10 +48,28 @@ namespace HowDareYou
             return speech;
         }
 
+        public static string GetWhatWouldYouDoSpeech()
+        {
+            List<string> speeches = enSpeech.GetWhatWouldYouDoSpeeches();
+            return speeches[random.Next(speeches.Count)];
+        }
+
+        public static string GetNotUnderstandSpeech()
+        {
+            List<string> notUnderstandSpeeches = enSpeech.GetNotUnderstandSpeeches();
+            return notUnderstandSpeeches[random.Next(notUnderstandSpeeches.Count)];
+        }
+
+        public static string GetTryAgainSpeech()
+        {
+            List<string> tryAgainSpeeches = enSpeech.GetTryAgainSpeeches();
+            return tryAgainSpeeches[random.Next(tryAgainSpeeches.Count)];
+        }
+
         public static string GetExceptionSpeech()
         {
-            List<string> exceptionSpeeches = enSpeech.GetExceptionSpeeches();
-            return exceptionSpeeches[random.Next(exceptionSpeeches.Count)];
+            List<string> speeches = enSpeech.GetExceptionSpeeches();
+            return speeches[random.Next(speeches.Count)];
         }
 
         protected static int CountTargetString(string text)
@@ -104,23 +133,8 @@ namespace HowDareYou
             return shortHelpSpeeches[random.Next(shortHelpSpeeches.Count)];
         }
 
-        public static string GetWhatWouldYouSpeech()
-        {
-            List<string> whatWouldYouSpeeches = enSpeech.GetWhatWouldYouSpeeches();
-            return whatWouldYouSpeeches[random.Next(whatWouldYouSpeeches.Count)];
-        }
 
-        public static string GetNotUnderstandSpeech()
-        {
-            List<string> notUnderstandSpeeches = enSpeech.GetNotUnderstandSpeeches();
-            return notUnderstandSpeeches[random.Next(notUnderstandSpeeches.Count)];
-        }
 
-        public static string GetTryAgainSpeech()
-        {
-            List<string> tryAgainSpeeches = enSpeech.GetTryAgainSpeeches();
-            return tryAgainSpeeches[random.Next(tryAgainSpeeches.Count)];
-        }
 
         public static string GetForcedEndSpeech()
         {

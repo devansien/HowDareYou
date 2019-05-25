@@ -6,6 +6,9 @@ namespace HowDareYou
     {
         private const string WelcomeA = "Welcome to #. "; // change to ssml audio saying HOW DARE YOU!, can be multiple voices
 
+        private const string UpdateUserNameA = "Your username is updated to #. ";
+        private const string UpdateUserNameB = "Your username is changed to #. ";
+
         private const string AskForUserNameA = "Your username is empty. ";
         private const string AskForUserNameB = "Your username is missing. ";
         private const string AskForUserNameC = "You haven't registered your username yet.";
@@ -15,12 +18,24 @@ namespace HowDareYou
                                                        "For example, you can say, update my username to, Alexa the queen of the world. " +
                                                        "It's your turn, give me something fancy. ";
 
+        private const string WhatWouldYouDoA = "What do you want to do next? ";
+        private const string WhatWouldYouDoB = "What would you like to do next? ";
+
+        private const string ExceptionA = "Sorry, something went wrong. Please try again later. ";
+        private const string ExceptionB = "Sorry, something is not right. Please try again later. ";
+        private const string ExceptionC = "Sorry, something must have happened. I suggest you to try again. ";
+        private const string ExceptionD = "Sorry, something went wrong. If problem persists, please contact support. ";
+
 
         public List<string> GetWelcomeSpeeches() { return new List<string> { WelcomeA }; }
 
+        public List<string> GetUpdateUserNameSpeeches() { return new List<string> { UpdateUserNameA, UpdateUserNameB }; }
         public List<string> GetAskForUserNameSpeeches() { return new List<string> { AskForUserNameA, AskForUserNameB, AskForUserNameC, AskForUserNameD }; }
         public List<string> GetAskForUserNameReprompts() { return new List<string> { AskForUserNameRepromptA }; }
 
+        public List<string> GetWhatWouldYouDoSpeeches() { return new List<string> { WhatWouldYouDoA, WhatWouldYouDoB }; }
+
+        public List<string> GetExceptionSpeeches() { return new List<string> { ExceptionA, ExceptionB, ExceptionC, ExceptionD }; }
 
 
 
@@ -43,7 +58,6 @@ namespace HowDareYou
 
         private const string ShortHelpA = "This is a short help speech. ";
         private const string DetailedHelpA = " This is a detailed help speech. ";
-        private const string WhatWouldYouA = "What would you like to do next? ";
 
         private const string NotUnderstandA = "I didn't understand. Please say help for detailed instructions. ";
 
@@ -60,10 +74,7 @@ namespace HowDareYou
         private const string ForceEndA = "Please try again later. Goodbye. ";
         private const string ForceEndB = "Please try again later, or restart the skill. Goodbye. ";
 
-        private const string ExceptionA = "Sorry, something went wrong. Please try again later. ";
-        private const string ExceptionB = "Sorry, something is not right. Please try again later. ";
-        private const string ExceptionC = "Sorry, something must have happened. I suggest you to try again. ";
-        private const string ExceptionD = "Sorry, something went wrong. If problem persists, please contact support. ";
+
 
 
 
@@ -75,7 +86,7 @@ namespace HowDareYou
 
         public List<string> GetShortHelpSpeeches() { return new List<string> { ShortHelpA }; }
         public List<string> GetDetailedHelpSpeeches() { return new List<string> { DetailedHelpA }; }
-        public List<string> GetWhatWouldYouSpeeches() { return new List<string> { WhatWouldYouA }; }
+
 
         public List<string> GetNotUnderstandSpeeches() { return new List<string> { NotUnderstandA }; }
         public List<string> GetTryAgainSpeeches() { return new List<string> { TryAgainA, TryAgainB, TryAgainC, TryAgainD }; }
@@ -83,7 +94,5 @@ namespace HowDareYou
         public List<string> GetCancelSpeeches() { return new List<string> { CancelA }; }
         public List<string> GetGoodbyeSpeeches() { return new List<string> { GoodbyeA, GoodbyeB }; }
 
-        public List<string> GetForcedEndSpeeches() { return new List<string> { ForceEndA, ForceEndB }; }
-        public List<string> GetExceptionSpeeches() { return new List<string> { ExceptionA, ExceptionB, ExceptionC, ExceptionD }; }
     }
 }
