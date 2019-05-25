@@ -15,7 +15,7 @@ namespace HowDareYou
                     if (State.NumPrompted % 3 == 0)
                     {
                         Response.SetSpeech(true, false,
-                            SpeechManager.GetNotUnderstandSpeech() + SpeechManager.GetForcedEndSpeech());
+                            SpeechManager.GetExceptionSpeech());
                     }
                     else
                         Response.SetSpeech(false, false,

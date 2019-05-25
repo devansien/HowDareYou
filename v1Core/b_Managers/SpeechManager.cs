@@ -136,11 +136,6 @@ namespace HowDareYou
 
 
 
-        public static string GetForcedEndSpeech()
-        {
-            List<string> forceEndSpeeches = enSpeech.GetForcedEndSpeeches();
-            return forceEndSpeeches[random.Next(forceEndSpeeches.Count)];
-        }
 
 
 

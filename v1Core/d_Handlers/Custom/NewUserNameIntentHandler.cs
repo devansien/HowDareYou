@@ -15,6 +15,7 @@ namespace HowDareYou
 
                     if (NewUserNameEntity.Values.Contains(target) && !string.IsNullOrWhiteSpace(username))
                     {
+                        State.UserName = username;
                         Response.SetSpeech(false, false,
                             SpeechManager.GetUpdateUserNameSpeech(username) + SpeechManager.GetWhatWouldYouDoSpeech(),
                             SpeechManager.GetWhatWouldYouDoSpeech());
