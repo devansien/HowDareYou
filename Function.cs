@@ -1,27 +1,40 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Alexa.NET.Request;
+using Alexa.NET.Response;
+using Amazon.Lambda.Core;
+using Newtonsoft.Json;
+using System.Reflection;
 using System.Threading.Tasks;
 
-using Amazon.Lambda.Core;
-
-// Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
 namespace HowDareYou
 {
-    public class Function
+    public class Function : Core
     {
-        
-        /// <summary>
-        /// A simple function that takes a string and does a ToUpper
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public string FunctionHandler(string input, ILambdaContext context)
+        public async Task<SkillResponse> FunctionHandler(APLSkillRequest request, ILambdaContext context)
         {
-            return input?.ToUpper();
+            Core core = new Core();
+            await core.Init(request, context);
+            await InvokeHandler(core);
+
+            await Database.SaveState();
+            SkillResponse response = Response.GetResponse();
+            Logger.Write($"Response detail: {JsonConvert.SerializeObject(response)}");
+            Logger.Write($"Latest user state detail: {JsonConvert.SerializeObject(State)}");
+            Logger.Write($"**************** [{SkillMetadata.Name}] processing ended ****************");
+
+            return response;
+        }
+
+        private async Task InvokeHandler(Core core)
+        {
+            object handlerInstance = core.GetHandlerInstance();
+
+            if (handlerInstance != null)
+            {
+                MethodBase handler = core.GetRequestHandler(handlerInstance.GetType());
+                await (Task)handler.Invoke(handlerInstance, null);
+            }
         }
     }
 }
