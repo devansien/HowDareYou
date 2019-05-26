@@ -21,6 +21,17 @@ namespace HowDareYou
             return speech;
         }
 
+        public static string GetWelcomeBackSpeech(string username)
+        {
+            List<string> speeches = enSpeech.GetWelcomeBackSpeeches();
+            string speech = speeches[random.Next(speeches.Count)];
+
+            int targetIndex = speech.IndexOf(replaceTarget);
+            speech = speech.Remove(targetIndex, replaceTarget.Length).Insert(targetIndex, username);
+
+            return speech;
+        }
+
         public static string GetUpdateUserNameSpeech(string username)
         {
             List<string> speeches = enSpeech.GetUpdateUserNameSpeeches();
@@ -43,6 +54,22 @@ namespace HowDareYou
         public static string GetAskForUserNameReprompt()
         {
             List<string> speeches = enSpeech.GetAskForUserNameReprompts();
+            string speech = speeches[random.Next(speeches.Count)];
+
+            return speech;
+        }
+
+        public static string GetFillUpProfileSpeech()
+        {
+            List<string> speeches = enSpeech.GetFillUpProfileSpeeches();
+            string speech = speeches[random.Next(speeches.Count)];
+
+            return speech;
+        }
+
+        public static string GetFillUpProfileReprompt()
+        {
+            List<string> speeches = enSpeech.GetFillUpProfileReprompts();
             string speech = speeches[random.Next(speeches.Count)];
 
             return speech;

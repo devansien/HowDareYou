@@ -3,6 +3,7 @@
     class SessionKey
     {
         public const string Viewport = "viewport";
+        public const string UserMode = "UserMode";
 
         public const string DbTableName = "UserState";
         public const string DbAccessKey = "DbAccessKey";

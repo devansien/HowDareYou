@@ -10,7 +10,7 @@ namespace HowDareYou
             try
             {
                 if (requestType.Equals(BuiltInRequest.LaunchRequest)
-                    || requestType.Equals(CustomRequest.NewUserNameIntent)
+                    || requestType.Equals(CustomRequest.NewUserNameIntent) || requestType.Equals(BuiltInRequest.YesIntent)
                     || !string.IsNullOrWhiteSpace(State.UserName))
                 {
                     Logger.Write($"[{requestType}] handling started");

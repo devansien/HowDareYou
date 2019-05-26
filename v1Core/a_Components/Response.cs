@@ -59,7 +59,7 @@ namespace HowDareYou
 
             if (isSsml)
             {
-                string ssmlSpeech = $"<speak>{speech}</speak>";
+                string ssmlSpeech = $"<speak><lang xml:lang=\"en-US\">{speech}</lang></speak>";
                 response.Response.OutputSpeech = new SsmlOutputSpeech() { Ssml = ssmlSpeech };
             }
             else
@@ -71,7 +71,7 @@ namespace HowDareYou
 
                 if (isSsml)
                 {
-                    string ssmlSpeech = $"<speak>{reprompt}</speak>";
+                    string ssmlSpeech = $"<speak><lang xml:lang=\"en-US\">{reprompt}</lang></speak>";
                     response.Response.Reprompt.OutputSpeech = new SsmlOutputSpeech { Ssml = ssmlSpeech };
                 }
                 else

@@ -33,6 +33,27 @@ namespace HowDareYou
                 },
                 new RequestType
                 {
+                    Name = BuiltInRequest.YesIntent,
+                    Type = typeof(YesIntentHandler)
+                },
+                new RequestType
+                {
+                    Name = CustomRequest.AnswerIntent,
+                    Type = typeof(AnswerIntentHandler)
+                },
+                new RequestType
+                {
+                    Name = CustomRequest.SetProfileModeIntent,
+                    Type = typeof(SetProfileModeIntentHandler)
+                },
+                new RequestType
+                {
+
+                    Name = CustomRequest.SendProfileIntent,
+                    Type = typeof(SendProfileIntentHandler)
+                },
+                new RequestType
+                {
                     Name = BuiltInRequest.SessionEndedRequest,
                     Type = typeof(SessionEndedRequestHandler)
                 }

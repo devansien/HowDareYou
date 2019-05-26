@@ -25,7 +25,10 @@ namespace HowDareYou
                 UserName = string.Empty,
                 NumPlayed = 0,
                 NumPrompted = 0,
-                Challanges = new List<Challange>(),
+                Friends = new List<Friend>(),
+                Profiles = new List<Profile>(),
+                PendingChallanges = new List<Profile>(),
+                ReturnedChallanges = new List<Profile>(),
                 Utterances = new List<Utterance>()
             };
 

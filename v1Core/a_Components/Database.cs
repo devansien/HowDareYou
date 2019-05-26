@@ -1,8 +1,11 @@
 ﻿using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace HowDareYou
@@ -44,9 +47,29 @@ namespace HowDareYou
             return Save;
         }
 
+        public async Task<State> GetFriend(string username)
+        {
+            List<ScanCondition> conditions = new List<ScanCondition>
+            {
+                new ScanCondition("UserName", ScanOperator.Equal, username)
+            };
+
+            List<State> users = await DbContext.ScanAsync<State>(conditions).GetRemainingAsync();
+            State friend = users.FirstOrDefault();
+
+         
+            return friend;
+        }
+
         public async Task SaveState()
         {
             await DbContext.SaveAsync(Save);
+        }
+
+
+        public async Task SaveFriend(State friend)
+        {
+            await DbContext.SaveAsync(friend);
         }
     }
 }
